@@ -1515,6 +1515,9 @@ img:not([src]) {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
+.img {
+  border-radius: 50%;
+}
 .img-alt {
   margin: -10px 0 10px;
   color: #858585;
@@ -3809,6 +3812,9 @@ h1.page-title + .tag-cloud-list {
   -o-transition: filter 375ms ease-in 0.2s;
   -ms-transition: filter 375ms ease-in 0.2s;
   transition: filter 375ms ease-in 0.2s;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 #article-container p {
   margin: 0 0 16px;
