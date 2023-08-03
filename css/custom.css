@@ -1,0 +1,32 @@
+.post-wrapwrap {
+  box-shadow: 0 0 10px #000;
+}
+.copyright-Yuanchuang-item {
+  background-color: #42b983;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+  margin-right: 9px;
+  font-size: small;
+  margin-left: 5px;
+}
+.Author {
+  font-weight: bolder;
+}
+.copyright-Yuanchuang {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+.copyright-link-item {
+  margin-left: 5px;
+}
+.copyright-link {
+  padding-left: 15px;
+}
+.copyright-license {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+.copyright-license-item {
+  margin-left: 5px;
+}
