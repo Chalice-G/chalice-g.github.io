@@ -1406,3 +1406,36 @@ box-shadow
 .copyright-license-item {
   margin-left: 5px;
 }
+.copyright {
+  margin-top: 2%;
+}
+.note {
+  border-left: 4px solid #007bff;
+  background-color: #f0faff;
+  padding: 10px;
+  margin: 20px 0;
+}
+.dark-theme .note {
+  background-color: #001628;
+  color: #fff;
+}
+.tip {
+  border-left: 4px solid #28a745;
+  background-color: #d4f9e1;
+  padding: 10px;
+  margin: 20px 0;
+}
+.dark-theme .tip {
+  background-color: #154a04;
+  color: #fff;
+}
+.warning {
+  border-left: 4px solid #dc3545;
+  background-color: #ffe5e5;
+  padding: 10px;
+  margin: 20px 0;
+}
+.dark-theme .warning {
+  background-color: #2b0c0c;
+  color: #fff;
+}
