@@ -17,7 +17,7 @@
 
 
 
-<title>年轻人的第一个博客 | Hello World！</title>
+<title>越是想要一次完成，越是完不成 | Hello World！</title>
 
 
 
@@ -200,7 +200,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">年轻人的第一个博客</h1>
+            <h1 class="post-title">越是想要一次完成，越是完不成</h1>
             
                 <div class="post-meta">
                     
@@ -209,7 +209,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 3, 2023&nbsp;&nbsp;15:17:41</a>
+                        Date: <a href="#">八月 29, 2023&nbsp;&nbsp;18:23:15</a>
                         </span>
                     
                     
@@ -218,78 +218,21 @@
         </header>
 
         <div class="post-content">
-            <p>如果你也想创建一个博客又不希望投入太多时间在技术管理上，那么Hexo是你的不二选择。作为一款轻量型的框架，Hexo能够快速渲染上百个界面并且支持主流的 Markdown格式。你可以将它部署在自己的服务器上，也可以部署在Github等其他平台。</p>
-<p>这次我将以 <code>Hexo+GithubPage</code> 教你如何免费搭建自己的博客。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在官网<a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js (nodejs.org</a>下载对应版本并执行安装程序。</p>
-<p><img src="https://bu.dusays.com/2023/08/03/64cb6a7daeaae.png" alt="image-20230803165056027"></p>
-<p>进入CMD命令行窗口，输入以下命令查看nodejs版本，如果显示呢版本信息则安装成功</p>
-<p>node版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-
-<p>npm版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://bu.dusays.com/2023/08/03/64cb6bb269b5b.png"></p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在官网<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>下载对应版本并执行安装程序。</p>
-<blockquote>
-<p>你可以一路回车，但是务必勾选Git Bash Here选项，因为这将允许你通过右键菜单打开Git Bash</p>
-</blockquote>
-<h3 id="配置用户名及邮箱"><a href="#配置用户名及邮箱" class="headerlink" title="配置用户名及邮箱"></a>配置用户名及邮箱</h3><p>桌面右键 -&gt; Git Bash Here，在弹出窗口中输入以下命令，注意替换你的用户名为你Github实际的用户名，替换<a href="mailto:&#x78;&#x78;&#x78;&#x40;&#120;&#120;&#x2e;&#x63;&#111;&#109;">&#x78;&#x78;&#x78;&#x40;&#120;&#120;&#x2e;&#x63;&#111;&#109;</a>为你Github邮箱。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email xxxx@xx.com</span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令，如果能看到自己用户名及邮箱即配置成功。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>输入以下命令安装Hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令查看 hexo 版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>初始化博客</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 你的博客名字</span><br></pre></td></tr></table></figure>
-
-<p>随后输入命令进入博客目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 你的博客名字</span><br></pre></td></tr></table></figure>
-
-<p>执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>完成之后，在你刚才的那个文件夹目录下应该会生成数个文件夹及文件。</p>
-<ul>
-<li>node_modules   |   存放依赖包</li>
-<li>public                 |   存放生成的页面</li>
-<li>scaffolds            |   存放文章模板</li>
-<li>source               |   存放你写的文章，分类，标签</li>
-<li>themes              |   存放主题</li>
-<li>_config.yml        |   hexo配置</li>
-</ul>
-<p>此时输入以下命令<br>生成文章页面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>运行服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">localhost:4000</a> 就可以看到你生成的页面了。</p>
-<p>你也可以指定端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 5000</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>使用 VS Code 打开_config.yml。</p>
-<p>这里你可以修改变量对应的值来自定义你的博客，比如<code>title</code>, <code>subtitle</code>, <code>Author</code>等。</p>
-<h2 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><h3 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h3><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><div class="note">
-<strong>Note</strong><br></br>
-This is a note content.
-</div>
-
-
-<div class= "tip">
-Tip<br></br>
-This is a tip content.
-</div>
-
-<div class = " warning">
-Warning<br></br>
-This is a warning content.
-</>
+            <p>因为不敢面对自己真的是没有做到有用的东西，于是一直在逃避。渴望一次通过面式，一次找到好工作 &#x2F; 考上研究生，以此来证明自己仍然是那个有实力的人。</p>
+<p>可以说，大学的前三年由于疫情，生活以及学习出现了较长的缓冲期，我也理所当然的用着这个借口去逃避那些本该要完成的事情。三年只考了四六级，没有去考计算机，没有考教资，想做的很多事，包括考笔译，也是拖延着没有去做。</p>
+<p>在面对这些焦虑时，我没有很诚恳的，很真实的去面对自己，到需要完成人物的最后时间，我才急急忙忙的去做一份马马虎虎的成果交上去。</p>
+<p>我总幻想着以后时间还长，把所有的事情都推到以后，幻想着只要自己发力就可以成功。每天无所事事，好像只要不去验证，那就不知道想法的真假。只要不知道真假，就仍然可以抱着那几乎不存在的概率，继续沉迷在自己创造的“美好”世界中。然而当这潮水褪去，才知道，其实这想法都是在裸泳。</p>
+<p>想要一次完成，其实是暴露了自己内心的对完不成结果的焦虑。我能想到完不成可能带来的结果，我也很害怕这种结果。</p>
+<p>但是很多时候，其实那些成功真的就不是一次完成的。成功的铸就来源于，反复的失败，长期的坚持，有些人的成功看起来突然，其实如果去了解它的日常，那就能发现他们能做成是理所当然。</p>
+<h3 id="诚实的面对自己"><a href="#诚实的面对自己" class="headerlink" title="诚实的面对自己"></a>诚实的面对自己</h3><p>不要逃避，接受自己的平凡，不管好与坏都接受。停止幻想，幻想在短期内能一定程度的让满足自己的虚荣心，但是长期来看，会让自己沉迷其中难以自拔。</p>
+<p>既然知道这件事情难，就大胆承认它难，不否定自己因为难产生的焦虑情绪。保持冷静，去想想看如何实现它而不是逃避它。</p>
+<h3 id="放下助人情节"><a href="#放下助人情节" class="headerlink" title="放下助人情节"></a>放下助人情节</h3><p>我需要通过别人的肯定去证明自己有优势，从某种程度上来说，我依靠着外部的反馈来找到自我存在的价值。这好比战争，它通过将国内矛盾转移到国外企图来化解危机。我也是不敢诚恳的面对自己，这是我的内部矛盾，我寻求外部的肯定，这是将自我的内部矛盾转移出去。</p>
+<p>因此，我不一定是真的喜欢主动帮助别人。</p>
+<p>要放下自己的助人情节，将自己的内在矛盾解决。</p>
+<h3 id="尝试去做决定"><a href="#尝试去做决定" class="headerlink" title="尝试去做决定"></a>尝试去做决定</h3><p>总是希望获得一个十全十美的决定，但是不管怎么选都不能做到每一个方面都完美不是吗？选择一条路就意味着另一条路的风景大概率很难去感受。</p>
+<p>有想法固然是好的，但是想法要匹配上自己的实力，否则又陷入幻想之中。</p>
+<p>尝试去做决定，不求十全十美，只求合理。从一个一个小的决定开始，如果确定要做，那就全心全意的投入其中。</p>
+<h3 id="脚踏实地"><a href="#脚踏实地" class="headerlink" title="脚踏实地"></a>脚踏实地</h3><p>不要眼高手低，其实做完前面三部分，这个部分就是自然而然能够做到吧。</p>
 
         </div>
 
@@ -303,7 +246,7 @@ This is a warning content.
                 
                 
                     <p class="copyright-link">
-                        <span class="copyright-link-item"><a href="http://example.com/2023/08/03/setup/">http://example.com/2023/08/03/setup/</a></span>
+                        <span class="copyright-link-item"><a href="http://example.com/2023/08/29/memo_1/">http://example.com/2023/08/29/memo_1/</a></span>
                     </p>
                 
                 
@@ -321,10 +264,6 @@ This is a warning content.
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -335,10 +274,10 @@ This is a warning content.
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/08/06/reading_note/">如何做读书笔记</a>
+                <a class="prev" rel="prev" href="/2023/08/31/fupan1/">每日复盘</a>
             
             
-            <a class="next" rel="next" href="/2023/07/17/study1/">完美的学习计划（一）</a>
+            <a class="next" rel="next" href="/2023/08/06/reading_note/">如何做读书笔记</a>
             
         </section>
 
