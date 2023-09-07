@@ -17,7 +17,7 @@
 
 
 
-<title>每日复盘 | Hello World！</title>
+<title>低成本让文件自动备份 | Hello World！</title>
 
 
 
@@ -135,7 +135,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">每日复盘</h1>
+            <h1 class="post-title">低成本让文件自动备份</h1>
             
                 <div class="post-meta">
                     
@@ -144,7 +144,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 31, 2023&nbsp;&nbsp;17:28:18</a>
+                        Date: <a href="#">九月 7, 2023&nbsp;&nbsp;19:17:09</a>
                         </span>
                     
                     
@@ -153,76 +153,28 @@
         </header>
 
         <div class="post-content">
-            <div align =center>
+            <p>在经历一次硬盘损坏丢失储存多年的数据后，我一直在寻找一个能自动备份到云端并且容量大的方案。首先想到的是NAS，但是搭建NAS的费用高昂，综合考虑，这种方式对于现在的存储需求来说并不经济。</p>
+<p>另外想到的就是百度云，开通会员获取一个大容量的存储服务。我当然有想过其他网盘，包括阿里，OneDrive等等，但是这些网盘并不主流，如果日后要分享文件的话也不方便，加之我在百度云上看视频需要倍数，综合这些考虑我选择了百度云。</p>
+<p>在搜寻自动备份文件时，我注意到了一个软件“FreeFileSync”，他能自动比较两个文件夹的区别，并将最新的文件复制到旧文件夹中，实现文件的同步。</p>
+<p>我在百度云开通了“云盘同步空间”，指定一个文件夹作为同步文件夹，这个文件夹的所有内容会自动同步到云端。我在FreeFileSync中指定我的项目文件夹等作为被同步文件夹，将云盘同步空间指定的文件夹指定为同步至此的文件夹。这样子，每当我对项目文件做了改动，新增了文件，FileSync将自动将这些文件复制到云盘同步空间文件夹，百度网盘则将自动上传，并保留之前的文件记录。</p>
+<p>在这个过程中，我所花费的就是每个月的一部分会员费，其余则无需多花钱。这个过程也不需要人手动操作，非常省心。</p>
+<p>以下是实现步骤。</p>
+<p>首先在FreeFileSync官网下载软件。</p>
+<p><img src="https://bu.dusays.com/2023/09/07/64f9c13a273d6.png" alt="{1962C7AC-76D8-493a-8C72-19AA26FA81CD}"></p>
+<p>随后在百度云中开通网盘同步空间，指定同步文件夹。</p>
+<p><img src="https://bu.dusays.com/2023/09/07/64f9c13ba6476.png" alt="image-20230907195949924"></p>
+<p>我们打开FreeFileSync，在左侧选择被同步的文件夹（点击“+”可以选择多个文件夹），在右侧选择百度网盘同步空间的文件夹。</p>
+<p><img src="https://bu.dusays.com/2023/09/07/64f9c13e484a1.png" alt="image-20230907200338535"></p>
+<p>点击左上方的另存为图标，保存到桌面或者其他你喜欢的位置，我们接下来要导入这个配置文件。</p>
+<p>打开RealTimesync，这个软件与刚才安装的FreeFileSync在同一个位置。</p>
+<p>点击文件 &gt;&gt; 打开，选择刚才导出的配置文件，点击开始即可开始自动同步了。</p>
+<p><img src="https://bu.dusays.com/2023/09/07/64f9d85608085.png" alt="image-20230907220401715"></p>
+<div class= "tip">
+Tip<br></br>
+Minimum idle time (in seconds) before running command是你要间隔多长时间同步一次，默认是10秒。
+</div>
 
-<table>
-<thead>
-<tr>
-<th>今天做的最好的 1 - 3 件事</th>
-<th>1 - 3 个行动，帮助我持续保持这些优点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>终于开始复习高数了</td>
-<td></td>
-</tr>
-<tr>
-<td>复习了欠下来的单词</td>
-<td></td>
-</tr>
-<tr>
-<td>开始写复盘</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>今天需要改进的 1 - 3 件事</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>减少使用手机做其他事情的时间</td>
-<td></td>
-</tr>
-<tr>
-<td>提升专注度</td>
-<td></td>
-</tr>
-<tr>
-<td>-</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>必须立刻停止的 1 - 3 件事</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>无意识的刷手机</td>
-<td></td>
-</tr>
-<tr>
-<td>-</td>
-<td></td>
-</tr>
-<tr>
-<td>-</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>后续要开始的 1 - 3 件事</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>复习政治</td>
-<td></td>
-</tr>
-<tr>
-<td>刷英语题</td>
-<td></td>
-</tr>
-<tr>
-<td>-</td>
-<td></td>
-</tr>
-</tbody></table>
+<p>打开百度云可以看到，文件都同步上来了。<br><img src="https://bu.dusays.com/2023/09/07/64f9c1403dc2c.png" alt="image-20230907195822034"></p>
 
         </div>
 
@@ -236,7 +188,7 @@
                 
                 
                     <p class="copyright-link">
-                        <span class="copyright-link-item"><a href="http://example.com/2023/08/31/fupan1/">http://example.com/2023/08/31/fupan1/</a></span>
+                        <span class="copyright-link-item"><a href="http://example.com/2023/09/07/backup/">http://example.com/2023/09/07/backup/</a></span>
                     </p>
                 
                 
@@ -264,10 +216,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/09/07/backup/">低成本让文件自动备份</a>
             
-            
-            <a class="next" rel="next" href="/2023/08/29/memo_1/">越是想要一次完成，越是完不成</a>
+            <a class="next" rel="next" href="/2023/08/31/fupan1/">每日复盘</a>
             
         </section>
 
