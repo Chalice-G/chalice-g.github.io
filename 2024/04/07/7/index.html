@@ -17,7 +17,7 @@
 
 
 
-<title>Tag | 🐼</title>
+<title>Hexo部署导致自定义域名失效的解决方案 | 🐼</title>
 
 
 
@@ -128,24 +128,88 @@
     }
 </script>
             <div class="main">
-                
+                <div class="container">
+    
+    
 
-    <div class="container">
-        <div class="post-wrap tags">
-            <h2 class="post-title">-&nbsp;Tag Cloud&nbsp;-</h2>
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Hexo部署导致自定义域名失效的解决方案</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Ng Wai Chun</a>
+                    
 
-            <div class="tag-cloud-tags">
-                
-                    <a href="/tags/%E5%AE%8C%E7%BE%8E%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">完美的学习计划<small>(1)</small></a>
-                
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习<small>(1)</small></a>
-                
-                    <a href="/tags/%E6%8A%80%E6%9C%AF/">技术<small>(4)</small></a>
-                
-            </div>
+                    
+                        <span class="post-time">
+                        Date: <a href="#">四月 7, 2024&nbsp;&nbsp;19:18:04</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>今天博客使用 了新域名，下午提交本地更改的内容，访问域名时发现仓库不存在。检查了一下GitHub page设置，发现自定义域名消失了。当时觉得奇怪但是后来又忘了。</p>
+<p>刚刚再一次遇到这个问题，仔细思考了之后发现是 Hexo部署时覆盖了远程的仓库，原先创建好的CNAME被删除了。</p>
+<p>解决方案如下：</p>
+<p>在博客的根目录的 Source 文件夹创建一个CNAME文件，内容就是自己域名，这样部署时就能够自动生成CNAME了。当然本质上还是用相同的文件去覆盖了原有的文件，达到维持不变的目的。</p>
+
         </div>
-    </div>
 
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-Yuanchuang">
+                        <span class="copyright-Yuanchuang-item">原创</span>
+                        <span class="Author">Ng Wai Chun</span>
+                    </p>
+                
+                
+                    <p class="copyright-link">
+                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2024/04/07/7/">http://blog.steedwu.com/2024/04/07/7/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-license">
+                        
+                        <span class="copyright-license-item">Copyright (c) 2023 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024/04/02/6/">Windows语言更改</a>
+            
+        </section>
+
+
+    </article>
+</div>
 
             </div>
             <footer id="footer" class="footer">
