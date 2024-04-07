@@ -17,7 +17,7 @@
 
 
 
-<title>低成本让文件自动备份 | 🐼</title>
+<title>Hello World | 🐼</title>
 
 
 
@@ -131,11 +131,76 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">低成本让文件自动备份</h1>
+            <h1 class="post-title">Hello World</h1>
             
                 <div class="post-meta">
                     
@@ -144,7 +209,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">九月 7, 2023&nbsp;&nbsp;19:17:09</a>
+                        Date: <a href="#">五月 9, 2023&nbsp;&nbsp;17:47:20</a>
                         </span>
                     
                     
@@ -153,28 +218,19 @@
         </header>
 
         <div class="post-content">
-            <p>在经历一次硬盘损坏丢失储存多年的数据后，我一直在寻找一个能自动备份到云端并且容量大的方案。首先想到的是NAS，但是搭建NAS的费用高昂，综合考虑，这种方式对于现在的存储需求来说并不经济。</p>
-<p>另外想到的就是百度云，开通会员获取一个大容量的存储服务。我当然有想过其他网盘，包括阿里，OneDrive等等，但是这些网盘并不主流，如果日后要分享文件的话也不方便，加之我在百度云上看视频需要倍数，综合这些考虑我选择了百度云。</p>
-<p>在搜寻自动备份文件时，我注意到了一个软件“FreeFileSync”，他能自动比较两个文件夹的区别，并将最新的文件复制到旧文件夹中，实现文件的同步。</p>
-<p>我在百度云开通了“云盘同步空间”，指定一个文件夹作为同步文件夹，这个文件夹的所有内容会自动同步到云端。我在FreeFileSync中指定我的项目文件夹等作为被同步文件夹，将云盘同步空间指定的文件夹指定为同步至此的文件夹。这样子，每当我对项目文件做了改动，新增了文件，FileSync将自动将这些文件复制到云盘同步空间文件夹，百度网盘则将自动上传，并保留之前的文件记录。</p>
-<p>在这个过程中，我所花费的就是每个月的一部分会员费，其余则无需多花钱。这个过程也不需要人手动操作，非常省心。</p>
-<p>以下是实现步骤。</p>
-<p>首先在FreeFileSync官网下载软件。</p>
-<p><img src="https://bu.dusays.com/2023/09/07/64f9c13a273d6.png" alt="{1962C7AC-76D8-493a-8C72-19AA26FA81CD}"></p>
-<p>随后在百度云中开通网盘同步空间，指定同步文件夹。</p>
-<p><img src="https://bu.dusays.com/2023/09/07/64f9c13ba6476.png" alt="image-20230907195949924"></p>
-<p>我们打开FreeFileSync，在左侧选择被同步的文件夹（点击“+”可以选择多个文件夹），在右侧选择百度网盘同步空间的文件夹。</p>
-<p><img src="https://bu.dusays.com/2023/09/07/64f9c13e484a1.png" alt="image-20230907200338535"></p>
-<p>点击左上方的另存为图标，保存到桌面或者其他你喜欢的位置，我们接下来要导入这个配置文件。</p>
-<p>打开RealTimesync，这个软件与刚才安装的FreeFileSync在同一个位置。</p>
-<p>点击文件 &gt;&gt; 打开，选择刚才导出的配置文件，点击开始即可开始自动同步了。</p>
-<p><img src="https://bu.dusays.com/2023/09/07/64f9d85608085.png" alt="image-20230907220401715"></p>
-<div class= "tip">
-Tip<br></br>
-Minimum idle time (in seconds) before running command是你要间隔多长时间同步一次，默认是10秒。
-</div>
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>打开百度云可以看到，文件都同步上来了。<br><img src="https://bu.dusays.com/2023/09/07/64f9c1403dc2c.png" alt="image-20230907195822034"></p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
         </div>
 
@@ -188,7 +244,7 @@ Minimum idle time (in seconds) before running command是你要间隔多长时间
                 
                 
                     <p class="copyright-link">
-                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2023/09/07/%E4%BD%8E%E6%88%90%E6%9C%AC%E8%AE%A9%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/">http://blog.steedwu.com/2023/09/07/%E4%BD%8E%E6%88%90%E6%9C%AC%E8%AE%A9%E6%96%87%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</a></span>
+                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2023/05/09/5/">http://blog.steedwu.com/2023/05/09/5/</a></span>
                     </p>
                 
                 
@@ -206,10 +262,6 @@ Minimum idle time (in seconds) before running command是你要间隔多长时间
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -220,10 +272,8 @@ Minimum idle time (in seconds) before running command是你要间隔多长时间
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/04/02/Windows%E4%B8%93%E4%B8%9A%E7%89%88/">Windows语言更改</a>
+                <a class="prev" rel="prev" href="/2023/07/17/1/">完美的学习计划（一）</a>
             
-            
-            <a class="next" rel="next" href="/2023/08/06/%E5%A6%82%E4%BD%95%E5%81%9A%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">如何做读书笔记</a>
             
         </section>
 
