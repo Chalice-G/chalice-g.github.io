@@ -17,7 +17,7 @@
 
 
 
-<title>Windows语言更改 | 🐼</title>
+<title>🐼</title>
 
 
 
@@ -131,76 +131,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    document.ready(function() {
-        tocbot.init(obj_merge(tocbot_default_config, {
-            collapseDepth: 1
-        }));
-    });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Windows语言更改</h1>
+            <h1 class="post-title"></h1>
             
                 <div class="post-meta">
                     
@@ -209,7 +144,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">四月 2, 2024&nbsp;&nbsp;11:50:03</a>
+                        Date: <a href="#">四月 7, 2024&nbsp;&nbsp;19:18:04</a>
                         </span>
                     
                     
@@ -218,19 +153,7 @@
         </header>
 
         <div class="post-content">
-            <p>之前一直想修改Windows的语言，奈何使用的是家庭版，无法修改。最近看到一篇帖子，心血来潮，决定尝试一下。</p>
-<h2 id="下载-amp-安装"><a href="#下载-amp-安装" class="headerlink" title="下载&amp;安装"></a>下载&amp;安装</h2><p>首先是下载对应的软件，<a href="https://link.zhihu.com/?target=https://github.com/zbezj/HEU_KMS_Activator/releases">HEU_KMS_Activator</a>。</p>
-<p>下载完后解压到合适的位置，关闭所有的杀毒软件，包括微软默认的。</p>
-<p>打开解压文件夹内的exe文件。点击查看密钥，随后将打开的txt文件另存到其他位置以备不时之需。</p>
-<p><img src="https://bu.dusays.com/2024/04/02/660b8062c4e23.png" alt="image-20240402114932346"></p>
-<p>在左侧选择你想要的版本，一般professional就可以修改语言。随后点击右侧的花朵进行下一步操作。</p>
-<p><img src="https://bu.dusays.com/2024/04/02/660b80fd08997.png" alt="image-20240402115214265"></p>
-<p>接下来系统会重启，请关闭所有后台程序。需要注意，这时候只是安装了系统，但是还没有完全激活。在重启完成后再次打开这个激活应用，点击智能激活，点击开始。</p>
-<p><img src="https://bu.dusays.com/2024/04/02/660b8146c6ff4.png" alt="image-20240402115327974"></p>
-<p>稍等一会，系统便成功激活了。</p>
-<p><img src="https://bu.dusays.com/2024/04/02/660b81de821ae.png" alt="image-20240402115600060"></p>
-<p>可以前往设置更改语言了。</p>
-<h2 id="语言修改"><a href="#语言修改" class="headerlink" title="语言修改"></a>语言修改</h2>
+            
         </div>
 
         
@@ -243,7 +166,7 @@
                 
                 
                     <p class="copyright-link">
-                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2024/04/02/6/">http://blog.steedwu.com/2024/04/02/6/</a></span>
+                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2024/04/07/7/">http://blog.steedwu.com/2024/04/07/7/</a></span>
                     </p>
                 
                 
@@ -261,10 +184,6 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -275,10 +194,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/04/07/7/"></a>
             
-            
-            <a class="next" rel="next" href="/2023/09/07/4/">低成本让文件自动备份</a>
+            <a class="next" rel="next" href="/2024/04/02/6/">Windows语言更改</a>
             
         </section>
 
