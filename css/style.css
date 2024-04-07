@@ -1381,7 +1381,7 @@ box-shadow
   background-color: #42b983;
   color: #fff;
   border-radius: 5px;
-  padding: 3px;
+  padding: 3px 7px 3px 7px;
   margin-right: 9px;
   font-size: small;
   margin-left: 5px;
@@ -1407,7 +1407,7 @@ box-shadow
   margin-left: 5px;
 }
 .copyright {
-  margin-top: 2%;
+  margin-top: 0%;
 }
 .note {
   border-left: 4px solid #007bff;
