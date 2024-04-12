@@ -153,7 +153,7 @@
         </header>
 
         <div class="post-content">
-            <p>今天博客使用 了新域名，下午提交本地更改的内容，访问域名时发现仓库不存在。检查了一下GitHub page设置，发现自定义域名消失了。当时觉得奇怪但是后来又忘了。</p>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>今天博客使用 了新域名，下午提交本地更改的内容，访问域名时发现仓库不存在。检查了一下GitHub page设置，发现自定义域名消失了。当时觉得奇怪但是后来又忘了。</p>
 <p>刚刚再一次遇到这个问题，仔细思考了之后发现是 Hexo部署时覆盖了远程的仓库，原先创建好的CNAME被删除了。</p>
 <p>解决方案如下：</p>
 <p>在博客的根目录的 Source 文件夹创建一个CNAME文件，内容就是自己域名，这样部署时就能够自动生成CNAME了。当然本质上还是用相同的文件去覆盖了原有的文件，达到维持不变的目的。</p>
@@ -201,6 +201,8 @@
             </div>
         </section>
         <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/04/10/8/">空客 PFD 速度信息显示</a>
             
             
             <a class="next" rel="next" href="/2024/04/02/6/">Windows语言更改</a>

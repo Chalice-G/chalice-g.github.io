@@ -17,7 +17,7 @@
 
 
 
-<title>年轻人的第一个博客 | 🐼</title>
+<title>空客 PFD 速度信息显示 | 🐼</title>
 
 
 
@@ -44,6 +44,45 @@
 
     
     
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
         
     
 
@@ -200,7 +239,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">年轻人的第一个博客</h1>
+            <h1 class="post-title">空客 PFD 速度信息显示</h1>
             
                 <div class="post-meta">
                     
@@ -209,7 +248,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">Thursday, 3 August, 2023&nbsp;&nbsp;15:17:41</a>
+                        Date: <a href="#">Wednesday, 10 April, 2024&nbsp;&nbsp;10:43:22</a>
                         </span>
                     
                     
@@ -218,80 +257,24 @@
         </header>
 
         <div class="post-content">
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>如果你也想创建一个博客又不希望投入太多时间在技术管理上，那么Hexo是你的不二选择。作为一款轻量型的框架，Hexo能够快速渲染上百个界面并且支持主流的 Markdown格式。你可以将它部署在自己的服务器上，也可以部署在Github等其他平台。</p>
-<p>这次我将以 <code>Hexo+GithubPage</code> 教你如何免费搭建自己的博客。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在官网<a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js (nodejs.org</a>下载对应版本并执行安装程序。</p>
-<p><img src="https://bu.dusays.com/2023/08/03/64cb6a7daeaae.png" alt="image-20230803165056027"></p>
-<p>进入CMD命令行窗口，输入以下命令查看nodejs版本，如果显示呢版本信息则安装成功</p>
-<p>node版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最近心血来潮看完《飞行员之眼》，注意到呢很多以前没有关注到的细节。因此抱着学习的态度，收集相关资料，将学习内容记录下来。</p>
+<p><img src="https://bu.dusays.com/2024/04/10/6616052f5530f.jpg"></p>
+<iframe src="//player.bilibili.com/player.html?aid=39961405&bvid=BV1vt411x7Cw&cid=70580319&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width=100% height=400px> </iframe>
 
-<p>npm版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>PFD全称 Primary Flight Display，显示包括姿态，速度，高度，航向等信息，它是仪表中非常重要的组件<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label=" [【A320 Magnifier】主飞行显示器（Primary Flight Display/PFD）](https://www.bilibili.com/read/cv12329009/)">[1]</span></a></sup>。这里主要关注速度。</p>
+<h2 id="绿点速度"><a href="#绿点速度" class="headerlink" title="绿点速度"></a>绿点速度</h2><p><img src="https://bu.dusays.com/2024/04/10/661619fc0c3e4.png" alt="image-20240410124736377"></p>
+<center>图1</center>
 
-<p><img src="https://bu.dusays.com/2023/08/03/64cb6bb269b5b.png"></p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在官网<a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>下载对应版本并执行安装程序。</p>
-<blockquote>
-<p>你可以一路回车，但是务必勾选Git Bash Here选项，因为这将允许你通过右键菜单打开Git Bash</p>
-</blockquote>
-<h3 id="配置用户名及邮箱"><a href="#配置用户名及邮箱" class="headerlink" title="配置用户名及邮箱"></a>配置用户名及邮箱</h3><p>桌面右键 -&gt; Git Bash Here，在弹出窗口中输入以下命令，注意替换你的用户名为你Github实际的用户名，替换<a href="mailto:&#x78;&#x78;&#120;&#64;&#x78;&#120;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#x78;&#120;&#64;&#x78;&#120;&#x2e;&#x63;&#111;&#x6d;</a>为你Github邮箱。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br></pre></td></tr></table></figure>
+<p>如图，这个速度信息在速度一栏以绿点的形式显示，故名为绿点速度。这是飞机在洁净构型下，发动机发生故障可以最小功率保持平飞的最佳速度。同时这也是设定形态1和以洁净构型进行飞行等待时的建议速度。</p>
+<h2 id="S速度"><a href="#S速度" class="headerlink" title="S速度"></a>S速度</h2><p><img src="https://bu.dusays.com/2024/04/10/661621fc148e2.png" alt="image-20240410132144711"></p>
+<center>图二</center>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email xxxx@xx.com</span><br></pre></td></tr></table></figure>
+<p>如图，这个速度信息在速度一栏以字母S表示。这是在形态 1 或者形态 1+F 时建议设置形态2时的速度。只有在缝翼或者襟翼处于 1（形态 1 或者形态 1+F ）时才显示。</p>
+<h2 id="F速度"><a href="#F速度" class="headerlink" title="F速度"></a>F速度</h2><p><img src="https://bu.dusays.com/2024/04/10/6616230236b2e.png" alt="image-20240410132606982"></p>
+<center>图三</center>
 
-<p>输入以下命令，如果能看到自己用户名及邮箱即配置成功。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>输入以下命令安装Hexo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>输入以下命令查看 hexo 版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<p>初始化博客</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 你的博客名字</span><br></pre></td></tr></table></figure>
-
-<p>随后输入命令进入博客目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 你的博客名字</span><br></pre></td></tr></table></figure>
-
-<p>执行以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>完成之后，在你刚才的那个文件夹目录下应该会生成数个文件夹及文件。</p>
-<ul>
-<li>node_modules   |   存放依赖包</li>
-<li>public                 |   存放生成的页面</li>
-<li>scaffolds            |   存放文章模板</li>
-<li>source               |   存放你写的文章，分类，标签</li>
-<li>themes              |   存放主题</li>
-<li>_config.yml        |   hexo配置</li>
-</ul>
-<p>此时输入以下命令<br>生成文章页面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p>运行服务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">localhost:4000</a> 就可以看到你生成的页面了。</p>
-<p>你也可以指定端口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 5000</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>使用 VS Code 打开_config.yml。</p>
-<p>这里你可以修改变量对应的值来自定义你的博客，比如<code>title</code>, <code>subtitle</code>, <code>Author</code>等。</p>
-<h2 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h2><h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><h3 id="部署到Github"><a href="#部署到Github" class="headerlink" title="部署到Github"></a>部署到Github</h3><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><div class="note">
-<strong>Note</strong><br></br>
-This is a note content.
-</div>
-
-
-<div class= "tip">
-Tip<br></br>
-This is a tip content.
-</div>
-
-<div class = " warning">
-Warning<br></br>
-This is a warning content.
-</>
-
-
+<p>如图，这个信息在速度一栏以字母F表示。这是在形态 2 时设置形态 3 或者形态 3 设置 形态全 时的建议速度。只有在缝翼或者襟翼处于形态 2 或者 形态 3 再或者复飞时才显示。</p>
+<h2 id="限制速度"><a href="#限制速度" class="headerlink" title="限制速度"></a>限制速度</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12329009/">【A320 Magnifier】主飞行显示器（Primary Flight Display/PFD）</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>
         </div>
 
         
@@ -304,7 +287,7 @@ This is a warning content.
                 
                 
                     <p class="copyright-link">
-                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2023/08/03/3/">http://blog.steedwu.com/2023/08/03/3/</a></span>
+                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2024/04/10/8/">http://blog.steedwu.com/2024/04/10/8/</a></span>
                     </p>
                 
                 
@@ -323,7 +306,7 @@ This is a warning content.
                 <span class="tag">
                     
                     
-                        <a href="/tags/%E6%8A%80%E6%9C%AF/"># 技术</a>
+                        <a href="/tags/%E8%88%AA%E7%A9%BA/"># -航空</a>
                     
                         
                 </span>
@@ -336,10 +319,10 @@ This is a warning content.
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/08/06/2/">如何做读书笔记</a>
+                <a class="prev" rel="prev" href="/2024/04/11/9/">📖经济学人阅读笔记 P1</a>
             
             
-            <a class="next" rel="next" href="/2023/07/17/1/">完美的学习计划（一）</a>
+            <a class="next" rel="next" href="/2024/04/07/7/">Hexo部署导致自定义域名失效的解决方案</a>
             
         </section>
 

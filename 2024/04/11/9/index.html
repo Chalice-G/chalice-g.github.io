@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+
+    <meta name="author" content="Ng Wai Chun">
+
+
+    <meta name="subtitle" content="Nice to meet you!">
+
+
+
+
+<title>📖经济学人阅读笔记 P1 | 🐼</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">🤠Cow boy</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">🤠Cow boy</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">📖经济学人阅读笔记 P1</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Ng Wai Chun</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">Thursday, 11 April, 2024&nbsp;&nbsp;19:30:53</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本篇文章来源于经济学人 2024年4月6日版，标题为 <strong>King of the Castle</strong> 。全文如下：</p>
+<blockquote>
+<div style="font-family: times">
+&nbsp When BOB IGER returned to the top job at Disney in November 2022, some anticipated a fairytale ending to the entertainment giant's troubles. In February last year Nelson Peltz, a feared activist investor called off a campaign by his hedge fund, <a href="#Sentence-1%EF%B8%8F⃣">Trian Partners, for a shake-up after Mr Iger announced measures to slash costs and otherwise improve Disney's fortunes.<sup>1</sup></a>
+<br>
+ &nbsp With the company's share price languishing, however, Mr Peltz returned to the warpath in October. Blackwells, another activist investor，launched a campaign of its own. <a href="#Sentence-2%EF%B8%8F⃣">Both sought seats on Disney's board, arguing it had grown too chummy with Mr Iger and failed to find a viable strategy amid the decline of "linear" TV.<sup>2</sup></a>
+ <br>&nbsp
+   On April 3rd both activists' candidates were rejected by shareholders at Disney's annual general meeting(AGM), by what the company said was "a substantial margin". <a>This has handed Mr Iger what he surely hopes is a decisive victory.<sup>3</sup></a> <a>Investors began to regain faith in Disney's boss after an earnings call in February, when he reported that losses in its steaming business, including Disney+, had narrowed sharply in the final quarter of 2023, and trumpeted splashy new initiatives including a partnership with Epic Games, a video game developer, to incorporate Disney characters into its popular “Fortnite” franchise.<sup>4</sup></a> The announcement that Disney would increase its dividend by 50% and repurchase $3bn of shares also went down a treat. Its share price jumped by % the following day, and has kept climbing since (see chart).
+<br>
+At the AGM, Mr. Iger declared that Disney has “turned a corner and entered a new, positive era.” Such triumphalism is premature, for Mr. Iger still has much work to do, in three areas especially. The first is to generate the “double-digit” operating margins in Disney's streaming business that he has promised investors. That will require a lot more subscribers, to provide economies of scale, which may put Mr. Iger in a bind. To stem losses in the business he has jacked up prices, undermining growth. Between the third and fourth quarters of last year, the number of subscribers to Disney+ (outside India) shrank by 1.3m. 
+<br>What is more, over half of the $7.5bn in costs Mr. Iger has pledged to slash are to come from Disney's content budget. That will hardly help the company grow, and could undermine a second of Mr. Iger's promises to restore Disney's creative magic. In his letter to shareholders from 1966, the last before he died, Walt Disney declared a disdain for sequels. Mr Iger, by contrast, is an avid fan. Of the 15 forthcoming films he mentioned in his presentation in February, all bar one were sequels, pre-quels, spin-offs or remakes. Mr Iger ap-plauded a greater reliance on franchises as a "smart thing". Results at the box office, however, have been disappointing. Last year Disney lost the top spot for global cin-ema-ticket sales, to Universal, for the first time since 2015. On March 3ist it was re-ported that last year's Indiana Jones film, a Disney reboot featuring an 8o-year-old Harrison Ford, took in $134m less at the box office than it cost to produce.
+<br>
+ The third promise Mr Iger must still ful-fil is to find a more durable successor than his last pick, whom he then supplanted. Worryingly, three of the four directors on Disney's succession-planning committee were involved in that bungled process. Already Mr Iger's two-year contract has been extended until the end of 2026.
+<br>
+If Mr Iger trips up, the interlopers may return. In his remarks at the AGM, Mr Peltz noted that, regardless of the outcome of the vote, he would be "watching the com-pany's performance". The veteran activist, too, may be a fan of sequels. </a>
+</div>
+</blockquote>
+<h3 id="Sentence-1️⃣"><a href="#Sentence-1️⃣" class="headerlink" title="Sentence 1️⃣"></a>Sentence 1️⃣</h3><p>1.Trian partners, for a <mark style="background-color: #C8E6C9">shake-up</mark> after Mr. Iger announced measures to <mark style="background-color:#C8E6C9">slash</mark> costs and otherwise improve Disney’ Fortunes.<br>在伊格宣布削减成本和其他改善迪士尼财务状况的措施之后，Trian合伙公司要求进行重组</p>
+<div style="color:#435EBE">
+<a style="color:#2b477d; font-weight:1000">for</a>在句中做连词，引导目的状语从句，表示寻求变革。<a style="color:#2b477d; font-weight:1000">shake-up</a>在这里指的是重大变革或动荡（组织、公司或团队）。
+<a style="color:#2b477d; font-weight:1000">slash</a>在这里时动词，意为大幅削减。<a style="color:#2b477d; font-weight:1000">Otherwise</a>是一个副词，表示在其他方面。意思是除了大幅削减成本以外的其他方法。
+<a style="color:#2b477d; font-weight:1000">to slash ... and ... improve，and</a>前后两个并列的不定式，第二个不定式前的to可以省略。
+</div>
+
+<h3 id="Sentence-2️⃣"><a href="#Sentence-2️⃣" class="headerlink" title="Sentence 2️⃣"></a>Sentence 2️⃣</h3><p>2.Both <mark style="background-color: #C8E6C9">sought</mark> seats on Disney’s board, arguing it had grown too <mark style="background-color: #C8E6C9">chummy</mark> with Mr. Iger and failed to find a viable strategy amid the decline of “linear” TV.<br>两人都寻求进入迪士尼董事会，认为公司与伊格尔关系过于亲密，而且在有线电视衰落的情况下，未能找到可行的战略。</p>
+<div style="color:#435EBE">
+    <a style="color:#2b477d; font-weight:1000">sought</a> 为 <a style="color:#2b477d; font-weight:1000">seek</a> 的过去时态。现在时态为 <a style="color:#2b477d; font-weight:1000">seeking</a>。固定搭配有<a style="color:#2b477d; font-weight:1000">seek sb/sth， seek sth from sb，seek to do</a>。例句：<br>
+<li> Drivers are advised to seek alternative routes. 寻找备份路线
+<li> He seeks help from a neighbour. 寻求帮助
+<li> He seeks to distance himself from the protesters. 试图和抗议者保持距离
+<br>
+chummy意思是非常友好的，亲近的。近义词为friendly。
+</div>
+
+<h3 id="Sentence-3️⃣"><a href="#Sentence-3️⃣" class="headerlink" title="Sentence 3️⃣"></a>Sentence 3️⃣</h3><p>3.This has handed Mr. Iger what he surely hopes is a <mark style="background-color: #C8E6C9">decisive</mark> victory.<br>这给了伊格先生他无疑希望获得的决定性胜利</p>
+<div style="color:#435EBE">
+    <a style="color:#2b477d; font-weight:1000">decisive</a>，形容词，意为果断的，决断的，决定性的，关键的。例句：<br>
+<li>She has played a decisive role in the peace negotiations.
+</div>
+
+<h3 id="Sentence-4️⃣"><a href="#Sentence-4️⃣" class="headerlink" title="Sentence 4️⃣"></a>Sentence 4️⃣</h3><p>4.On April 3rd both activists candidates were rejected by <mark style="background-color: #C8E6C9">shareholders</mark> at Disney’s annual general meeting(AGM), by what the company said was “a <mark style="background-color: #C8E6C9">substantial margin</mark>“.<br>4月3日，在迪士尼的年度股东大会上，两位活跃人士候选人被股东们以公司称为“相当大的差距”被否决。</p>
+<div style="color:#435EBE">
+    <a style="color:#2b477d; font-weight:1000">shareholders</a> 就是股东，也就是一家公司share（股份）的持有者。<a style="color:#2b477b; font-weight:1000">substantial</a>，大量的，实质的。<a style="color:#2b477b; font-weight:1000">margin</a>，差额，边缘，利润。这里指的是差距大。
+</div>
+
+
+<h3 id="Sentence-5️⃣"><a href="#Sentence-5️⃣" class="headerlink" title="Sentence 5️⃣"></a>Sentence 5️⃣</h3><p>5.Investors began to regain faith in Disney’s boss after an <mark style="background-color: #C8E6C9">earnings call</mark> in February, when he reported that <mark style="background-color: #C8E6C9">losses</mark> in its streaming business, including Disney+, had narrowed sharply in the final quarter of 2023, and <mark style="background-color: #C8E6C9">trumpeted</mark> <mark style="background-color: #C8E6C9">splashy</mark> new initiatives including a partnership with Epic Games, a video-game developer, to incorporate Disney characters into its popular “Fortnite <mark style="background-color: #C8E6C9">franchise</mark>“.<br>投资者在二月的财报电话会议后开始重新对迪士尼的老板恢复信心。在会议上，他报告称公司的流媒体业务，包括Disney+，在2023年第四季度的亏损大幅缩减，并宣布了一系列引人注目的新举措，包括与视频游戏开发商Epic Games合作，将迪士尼角色引入其热门的“Fortnite”系列游戏中。</p>
+<div style="color:#435EBE">
+    <a style="color:#2b477d; font-weight:1000">earnings call</a>，即财报电话会议。<a style="color:#2b477d; font-weight:1000">losses</a>损失，亏损，去世。常见词组还有<a style="color:#2b477d; font-weight:1000"> at a loss </a>不知所惑；困惑；<a style="color:#2b477d; font-weight:1000">cut your losses</a>及时止损。<a style="color:#2b477d; font-weight:1000">trumpeted</a>原型是trumpet，名词意为小号，喇叭。动词形式意为宣扬，鼓吹。<a style="color:#2b477d; font-weight:1000">splashy</a>意为引入注目的，泥泞的。这里其实就是说宣布新举措像喇叭一样大声宣扬。<a style="color:#2b477d; font-weight:1000">franchise</a>，特许经营权，做动词时意为授予（或出售）特许经销权（或经营权）。Disney给予Epic Games使用其角色的授权，将Disney角色引入Fortnite这个流行游戏及其相关产品和服务。
+<br>
+这个句子太长了，但其实很长的一部分都是在修饰。主语是<a style="color:#2b477d; font-weight:1000;">Investor</a>，谓语是<a style="color:#2b477d; font-weight:1000">began to regain</a>，宾语是<a style="color:#2b477d; font-weight:1000">faith in Disney‘s boss</a>。后面是when引导的定语从句用来修饰二月的这个财报电话会议。会议内容就是公司的流媒体业务亏损大幅缩减，还有宣布了一系列引人注目的新措施。后面说到的措施就是与迪士尼合作。
+</div>
+
+<h3 id="Sentence-6️⃣"><a href="#Sentence-6️⃣" class="headerlink" title="Sentence 6️⃣"></a>Sentence 6️⃣</h3><p>6.The announcement that Disney would increase its <mark style="background-color: #C8E6C9">dividend</mark> by 50% and repurchase $3bn of shares also <mark style="background-color: #C8E6C9">went down</mark> a treat.</p>
+<p>迪士尼将增加股息50%并回购30亿美元的股票的公告也非常成功。</p>
+<div style="color:#435EBE">
+<a style="color:#2b477d; font-weight:1000">dividend</a>，红利，股息，好处。常见词组有<a style="color:#2b477d; font-weight:1000">dividend policy，dividend distribution，stock dividend</a>，分别是股息分配方针，股息分配，股票的股息。
+<a style="color:#2b477d; font-weight:1000">went down</a>原型是go down，意思是被接收被采纳，加上treat意思是非常受成功，也就是受欢迎。
+</div>
+
+<h3 id="Sentence-7️⃣"><a href="#Sentence-7️⃣" class="headerlink" title="Sentence 7️⃣"></a>Sentence 7️⃣</h3><p>7.That will require a lot more subscribers, to provide economics of scale, which may put Mr. Iger <mark style="background-color: #C8E6C9">in a bind</mark>.</p>
+<p>这将需要更多的订阅者，以提供规模经济，这可能会让伊格尔先生陷入困境。</p>
+<div style="color:#435EBE">
+<a style="color:#2b477d; font-weight:1000">in a bind</a>，处于困境中，进退维谷。
+</div>
+
+<h3 id="Sentence-8️⃣"><a href="#Sentence-8️⃣" class="headerlink" title="Sentence 8️⃣"></a>Sentence 8️⃣</h3><p>8.To <mark style="background-color: #C8E6C9">stem losses</mark> in the business he has <mark style="background-color: #C8E6C9">jacked up</mark> prices, undermining growth.</p>
+<p>为了遏制业务中的损失，他已经大幅提高了价格，削弱了增长。</p>
+<p><a style="color:#2b477d; font-weight:1000">stem</a>，做名词时指的是花草的茎，高脚杯的脚。做动词时意为组织，遏止。这里与losses搭配表示阻止亏损。<a style="color:#2b477d; font-weight:1000">jack up</a>，提高，抬高。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-Yuanchuang">
+                        <span class="copyright-Yuanchuang-item">原创</span>
+                        <span class="Author">Ng Wai Chun</span>
+                    </p>
+                
+                
+                    <p class="copyright-link">
+                        <span class="copyright-link-item"><a href="http://blog.steedwu.com/2024/04/11/9/">http://blog.steedwu.com/2024/04/11/9/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-license">
+                        
+                        <span class="copyright-license-item">Copyright (c) 2023 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%BA%BA/"># 经济学人</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024/04/10/8/">空客 PFD 速度信息显示</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Ng Wai Chun | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
